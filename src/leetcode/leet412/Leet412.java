@@ -7,7 +7,7 @@ public class Leet412 {
 	public List<String> fizzBuzz(int n) {
 		List<String> answer = new ArrayList<String>();
 
-		for (int i=1; i<=n; i++) {
+		for (int i = 1; i <= n; i++) {
 			if (isFizz(i) && isBuzz(i)) {
 				answer.add("FizzBuzz");
 			} else if (isFizz(i) && !isBuzz(i)) {
