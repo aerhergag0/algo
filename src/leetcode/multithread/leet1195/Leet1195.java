@@ -1,4 +1,4 @@
-package leetcode.leet1195;
+package leetcode.multithread.leet1195;
 
 import java.util.ArrayList;
 import java.util.List;

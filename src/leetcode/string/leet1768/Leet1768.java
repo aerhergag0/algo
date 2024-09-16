@@ -1,4 +1,4 @@
-package leetcode.leet1768;
+package leetcode.string.leet1768;
 
 public class Leet1768 {
 	public String mergeAlternately(String word1, String word2) {

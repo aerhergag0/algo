@@ -1,4 +1,4 @@
-package leetcode.leet876;
+package leetcode.linkedlist.leet876;
 
 import java.util.ArrayList;
 

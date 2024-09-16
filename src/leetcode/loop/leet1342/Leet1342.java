@@ -1,4 +1,4 @@
-package leetcode.leet1342;
+package leetcode.loop.leet1342;
 
 public class Leet1342 {
 	public int numberOfSteps(int num) {
