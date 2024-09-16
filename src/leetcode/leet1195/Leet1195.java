@@ -1,5 +1,7 @@
 package leetcode.leet1195;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.IntConsumer;
 
 public class Leet1195 {
@@ -64,27 +66,32 @@ public class Leet1195 {
 
 	public static void main(String[] args) throws InterruptedException {
 		Leet1195 data = new Leet1195(15);
+		List<String> answer = new ArrayList<>();
 		Thread thread1 = new Thread(() -> {
 			try {
-				data.fizz(() -> System.out.print("fizz"));
+//				data.fizz(() -> System.out.print("fizz"));
+				data.fizz(() -> answer.add("fizz"));
 			} catch (Exception e) {
 			}
 		});
 		Thread thread2 = new Thread(() -> {
 			try {
-				data.buzz(() -> System.out.print("buzz"));
+//				data.buzz(() -> System.out.print("buzz"));
+				data.buzz(() -> answer.add("buzz"));
 			} catch (Exception e) {
 			}
 		});
 		Thread thread3 = new Thread(() -> {
 			try {
-				data.fizzbuzz(() -> System.out.print("fizzbuzz"));
+//				data.fizzbuzz(() -> System.out.print("fizzbuzz"));
+				data.fizzbuzz(() -> answer.add("fizzbuzz"));
 			} catch (Exception e) {
 			}
 		});
 		Thread thread4 = new Thread(() -> {
 			try {
-				data.number(i -> System.out.print(i));
+//				data.number(i -> System.out.print(i));
+				data.number(i -> answer.add(String.valueOf(i)));
 			} catch (Exception e) {
 			}
 		});
@@ -96,6 +103,8 @@ public class Leet1195 {
 		thread2.join();
 		thread3.join();
 		thread4.join();
+
+		System.out.println(answer);
 	}
 
 }

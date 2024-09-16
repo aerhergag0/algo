@@ -1,0 +1,3 @@
+- wait() 메소드는 lock을 소유한 Thread가 자신의 제어권을 양보한다.
+- notify(), notifyAll() 메소드는 wait상태에 빠져있는 다른 Thread를 다시 RUNNABLE 상태로 변경한다.
+- wait(), notify(), notifyAll() 메소드는 Thread의 메소드가 아닌 Object의 메소드이다.
