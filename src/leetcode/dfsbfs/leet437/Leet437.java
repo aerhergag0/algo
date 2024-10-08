@@ -1,5 +1,8 @@
 package leetcode.dfsbfs.leet437;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Leet437 {
 
 	public class TreeNode {
@@ -21,9 +24,31 @@ public class Leet437 {
 		}
 	}
 
+	int answer = 0;
+	Map<Long, Integer> prefixSum;
+
 	public int pathSum(TreeNode root, int targetSum) {
-		int answer = 0;
+		if (root == null) return 0;
+
+		prefixSum = new HashMap<>();
+		prefixSum.put(0L,1);
+
+		dfs(root, 0, targetSum);
 
 		return answer;
+	}
+
+	private void dfs(TreeNode treeNode, long currentSum, int targetNum) {
+		if (treeNode == null) return;
+
+		currentSum += treeNode.val;
+
+		answer += prefixSum.getOrDefault(currentSum - targetNum, 0);
+		prefixSum.put(currentSum, prefixSum.getOrDefault(currentSum, 0) + 1);
+
+		dfs(treeNode.left, currentSum, targetNum);
+		dfs(treeNode.right, currentSum, targetNum);
+
+		prefixSum.put(currentSum, prefixSum.get(currentSum) - 1);
 	}
 }
